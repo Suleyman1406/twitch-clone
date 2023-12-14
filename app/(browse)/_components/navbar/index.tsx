@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Logo } from "./logo";
 
 import { Search } from "./search";
