@@ -16,7 +16,7 @@ model User {
   bio             String? @db.Text
   
   following       Follow[] @relation("Following")
-  followed        Follow[] @relation("FollowedBy")
+  followedBy      Follow[] @relation("FollowedBy")
 
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt

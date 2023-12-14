@@ -12,7 +12,7 @@ import React from "react";
 interface IUserItemProps {
   username: string;
   imageUrl: string;
-  isLive: boolean;
+  isLive?: boolean;
 }
 export const UserItem = ({ username, imageUrl, isLive }: IUserItemProps) => {
   const { collapsed } = useSidebar();

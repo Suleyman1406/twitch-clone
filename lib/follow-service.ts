@@ -26,8 +26,24 @@ export const getIsFollowingUser = async (id: string) => {
 
     return !!existingFollow;
   } catch (error) {
-    console.error(error);
     return false;
+  }
+};
+
+export const getFollowedUsers = async () => {
+  try {
+    const self = await getSelf();
+
+    return await db.follow.findMany({
+      where: {
+        followerId: self.id,
+      },
+      include: {
+        following: true,
+      },
+    });
+  } catch (error) {
+    return [];
   }
 };
 
