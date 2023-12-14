@@ -3,6 +3,7 @@ import { useSidebar } from "@/store/use-sidebar";
 import { User } from "@prisma/client";
 import React from "react";
 import { UserItem, UserItemSkeleton } from "./userItem";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface IRecommendedProps {
   data: User[];
@@ -36,7 +37,10 @@ export const Recommended = ({ data }: IRecommendedProps) => {
 
 export const RecommendedSkeleton = () => {
   return (
-    <ul className="px-2">
+    <ul className="px-2 pt-4 lg:pt-0">
+      <div className="px-3 pb-3 hidden lg:block">
+        <Skeleton className="h-5 w-full" />
+      </div>
       {[...new Array(3)].map((_, idx) => (
         <UserItemSkeleton key={idx} />
       ))}
