@@ -12,11 +12,11 @@ const font = Poppins({
 export const Logo = () => {
   return (
     <Link href="/">
-      <div className="hidden lg:flex items-center gap-x-4 hover:opacity-75 transition">
-        <div className="bg-white rounded-full p-1">
+      <div className="flex items-center gap-x-4 hover:opacity-75 transition min-w-[36px] mr-2">
+        <div className="bg-white rounded-full p-1 shrink w-fit">
           <Image src="/spooky.svg" alt="Dadawitch" width={32} height={32} />
         </div>
-        <div className={cn(font.className)}>
+        <div className={(cn(font.className), "hidden lg:block")}>
           <p className="text-lg font-semibold">Dadawitch</p>
           <p className="text-muted-foreground text-sm">Let&apos;s stream</p>
         </div>
