@@ -33,6 +33,9 @@ export const getRecommended = async () => {
     orderBy: {
       createdAt: "asc",
     },
+    include: {
+      stream: true,
+    },
   });
 
   return users;
