@@ -1,5 +1,5 @@
 "use client";
-import Hint from "@/components/hint";
+import { Hint } from "@/components/hint";
 import { Button } from "@/components/ui/button";
 import { useCreatorSidebar } from "@/store/use-creator-sidebar";
 import { ArrowLeftFromLineIcon, ArrowRightFromLineIcon } from "lucide-react";

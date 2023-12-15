@@ -12,7 +12,7 @@ interface IHintProps {
   side?: "top" | "bottom" | "left" | "right";
   align?: "start" | "center" | "end";
 }
-const Hint = ({ label, children, asChild, side, align }: IHintProps) => {
+export const Hint = ({ label, children, asChild, side, align }: IHintProps) => {
   return (
     <TooltipProvider>
       <Tooltip delayDuration={0}>
@@ -28,5 +28,3 @@ const Hint = ({ label, children, asChild, side, align }: IHintProps) => {
     </TooltipProvider>
   );
 };
-
-export default Hint;
