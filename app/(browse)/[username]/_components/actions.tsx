@@ -43,8 +43,8 @@ export const Actions = ({
 
   const handleBlock = () => {
     startTransition(() => {
-      onBlock(user.id)
-        // onUnblock(user.id)
+      // onBlock(user.id)
+      onUnblock(user.id)
         .then(() => {
           toast.success("Blocked");
         })
