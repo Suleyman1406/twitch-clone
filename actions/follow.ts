@@ -4,11 +4,6 @@ import { followUser, unfollowUser } from "@/lib/follow-service";
 import { revalidatePath } from "next/cache";
 
 export const onFollow = async (id: string) => {
-  await new Promise((res, rej) =>
-    setTimeout(() => {
-      res("hehe");
-    }, 2000)
-  );
   const follow = await followUser(id);
 
   revalidatePath("/");
