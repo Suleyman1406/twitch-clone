@@ -1,7 +1,6 @@
 "use client";
 import { useSidebar } from "@/store/use-sidebar";
 import { User } from "@prisma/client";
-import React from "react";
 import { UserItem, UserItemSkeleton } from "./userItem";
 import { Skeleton } from "@/components/ui/skeleton";
 
