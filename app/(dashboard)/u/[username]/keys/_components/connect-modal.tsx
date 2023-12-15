@@ -19,8 +19,34 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { IngressInput } from "livekit-server-sdk";
+import { ElementRef, useRef, useState, useTransition } from "react";
+import { createIngress } from "@/actions/ingress";
+import { toast } from "sonner";
+
+const RTMP = String(IngressInput.RTMP_INPUT);
+const WHIP = String(IngressInput.WHIP_INPUT);
+
+type IngressType = typeof RTMP | typeof WHIP;
 
 export const ConnectModal = () => {
+  const buttonRef = useRef<ElementRef<"button">>(null);
+  const [ingressType, setIngressType] = useState<IngressType>(RTMP);
+  const [isPending, startTransition] = useTransition();
+
+  const onSubmit = () => {
+    startTransition(() => {
+      createIngress(parseInt(ingressType))
+        .then(() => {
+          buttonRef.current?.click();
+          toast.success("Ingress created!");
+        })
+        .catch((error) =>
+          toast.error(error.message || "Something went wrong!")
+        );
+    });
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -32,13 +58,17 @@ export const ConnectModal = () => {
         <DialogHeader>
           <DialogTitle>Generate Connection</DialogTitle>
         </DialogHeader>
-        <Select>
+        <Select
+          value={ingressType}
+          disabled={isPending}
+          onValueChange={(val) => setIngressType(val)}
+        >
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Ingress Type" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="RTMP">RTMP</SelectItem>
-            <SelectItem value="WHIP">WHIP</SelectItem>
+            <SelectItem value={RTMP}>RTMP</SelectItem>
+            <SelectItem value={WHIP}>WHIP</SelectItem>
           </SelectContent>
         </Select>
         <Alert variant={"secondary"}>
@@ -51,10 +81,12 @@ export const ConnectModal = () => {
         </Alert>
 
         <div className="flex justify-between">
-          <DialogClose>
+          <DialogClose asChild ref={buttonRef}>
             <Button variant="ghost">Cancel</Button>
           </DialogClose>
-          <Button variant="primary">Generate</Button>
+          <Button onClick={onSubmit} disabled={isPending} variant="primary">
+            Generate
+          </Button>
         </div>
       </DialogContent>
     </Dialog>

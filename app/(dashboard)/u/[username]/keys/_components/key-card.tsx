@@ -20,7 +20,7 @@ export const KeyCard = ({ value }: IKeyCardProps) => {
             <Input
               disabled
               type={showPass ? "text" : "password"}
-              value={value || "hi"}
+              value={value || ""}
               placeholder="Stream Key"
             />
             <CopyButton value={value || ""} />
