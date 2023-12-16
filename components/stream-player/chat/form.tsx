@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { ChatInfo } from "./info";
 
 interface IChatFormProps {
   value: string;
@@ -60,6 +61,7 @@ export const ChatForm = ({
       onSubmit={handleSubmit}
     >
       <div className="w-full">
+        <ChatInfo isDelayed={isDelayed} isFollowerOnly={isFollowerOnly} />
         <Input
           onChange={(e) => onChange(e.target.value)}
           value={value}
