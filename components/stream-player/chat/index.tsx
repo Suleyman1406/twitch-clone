@@ -8,8 +8,9 @@ import {
   useRemoteParticipant,
 } from "@livekit/components-react";
 
-import { useChatSidebar } from "@/store/use-chat-sidebar";
+import { ChatVariant, useChatSidebar } from "@/store/use-chat-sidebar";
 import { ChatHeader } from "./header";
+import { ChatForm } from "./form";
 
 interface IChatProps {
   hostName: string;
@@ -67,6 +68,24 @@ export const Chat = ({
   return (
     <div className="flex flex-col bg-background border-l border-b pt-0 h-[calc(100vh-80px)]">
       <ChatHeader />
+      {variant === ChatVariant.CHAT && (
+        <>
+          <ChatForm
+            value={value}
+            onSubmit={onSubmit}
+            onChange={onChange}
+            isHidden={isHidden}
+            isDelayed={isChatDelayed}
+            isFollowing={isFollowing}
+            isFollowerOnly={isChatFollowerOnly}
+          />
+        </>
+      )}
+      {variant === ChatVariant.COMMUNITY && (
+        <>
+          <p>Community Mode</p>
+        </>
+      )}
     </div>
   );
 };
