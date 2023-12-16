@@ -11,6 +11,7 @@ import {
 import { ChatVariant, useChatSidebar } from "@/store/use-chat-sidebar";
 import { ChatHeader } from "./header";
 import { ChatForm } from "./form";
+import { ChatList } from "./list";
 
 interface IChatProps {
   hostName: string;
@@ -70,6 +71,7 @@ export const Chat = ({
       <ChatHeader />
       {variant === ChatVariant.CHAT && (
         <>
+          <ChatList messages={reversedMessages} isHidden={isHidden} />
           <ChatForm
             value={value}
             onSubmit={onSubmit}
