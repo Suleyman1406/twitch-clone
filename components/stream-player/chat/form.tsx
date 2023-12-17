@@ -9,22 +9,24 @@ import { ChatInfo } from "./info";
 
 interface IChatFormProps {
   value: string;
-  onSubmit: () => void;
-  onChange: (value: string) => void;
+  isHost: boolean;
   isHidden: boolean;
   isDelayed: boolean;
   isFollowing: boolean;
   isFollowerOnly: boolean;
+  onSubmit: () => void;
+  onChange: (value: string) => void;
 }
 
 export const ChatForm = ({
   value,
   onChange,
   onSubmit,
-  isDelayed,
-  isFollowerOnly,
-  isFollowing,
+  isHost,
   isHidden,
+  isDelayed,
+  isFollowing,
+  isFollowerOnly,
 }: IChatFormProps) => {
   const [isDelayBlocked, setIsDelayBlocked] = useState(false);
 
@@ -39,7 +41,7 @@ export const ChatForm = ({
 
     if (!value || isDisabled) return;
 
-    if (isDelayed && !isDelayBlocked) {
+    if (isDelayed && !isDelayBlocked && !isHost) {
       setIsDelayBlocked(true);
 
       setTimeout(() => {
@@ -68,7 +70,7 @@ export const ChatForm = ({
           disabled={isDisabled}
           placeholder="Send a message"
           className={cn(
-            "border-white/10",
+            "border-white/10 focus-visible:ring-transparent focus-visible:ring-offset-0",
             isFollowerOnly && "rounded-t-none border-t-0"
           )}
         />

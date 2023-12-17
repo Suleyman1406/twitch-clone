@@ -22,6 +22,7 @@ interface IChatProps {
   isFollowing: boolean;
   isChatEnabled: boolean;
   isChatDelayed: boolean;
+  viewerIdentity: string;
   isChatFollowerOnly: boolean;
 }
 
@@ -32,6 +33,7 @@ export const Chat = ({
   hostIdentity,
   isChatDelayed,
   isChatEnabled,
+  viewerIdentity,
   isChatFollowerOnly,
 }: IChatProps) => {
   const [value, setValue] = useState("");
@@ -44,6 +46,8 @@ export const Chat = ({
   const isOnline = participant && connectionState === ConnectionState.Connected;
 
   const isHidden = !isChatEnabled || !isOnline;
+  const hostAsViewer = `host-${hostIdentity}`;
+  const isHost = viewerIdentity === hostAsViewer;
 
   useEffect(() => {
     if (matches) {
@@ -76,6 +80,7 @@ export const Chat = ({
           <ChatList messages={reversedMessages} isHidden={isHidden} />
           <ChatForm
             value={value}
+            isHost={isHost}
             onSubmit={onSubmit}
             onChange={onChange}
             isHidden={isHidden}

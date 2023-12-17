@@ -5,7 +5,6 @@ import { getSelf } from "@/lib/auth-service";
 import {
   IngressAudioEncodingPreset,
   IngressVideoEncodingPreset,
-  RoomServiceClient,
   IngressClient,
   IngressInput,
   type CreateIngressOptions,
@@ -13,12 +12,7 @@ import {
 
 import { TrackSource } from "livekit-server-sdk/dist/proto/livekit_models";
 import { revalidatePath } from "next/cache";
-
-const roomService = new RoomServiceClient(
-  process.env.LIVEKIT_API_URL!,
-  process.env.LIVEKIT_API_KEY!,
-  process.env.LIVEKIT_API_SECRET!
-);
+import { roomService } from "@/constants";
 
 const ingressClient = new IngressClient(process.env.LIVEKIT_API_URL!);
 

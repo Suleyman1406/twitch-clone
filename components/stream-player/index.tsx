@@ -71,6 +71,7 @@ export const StreamPlayer = ({ user, isFollowing }: IStreamPlayerProps) => {
             hostIdentity={user.id}
             hostName={user.username}
             isFollowing={isFollowing}
+            viewerIdentity={idenditity}
             isChatEnabled={user.stream?.isChatEnabled ?? true}
             isChatDelayed={user.stream?.isChatDelayed ?? true}
             isChatFollowerOnly={user.stream?.isChatFollowerOnly ?? true}

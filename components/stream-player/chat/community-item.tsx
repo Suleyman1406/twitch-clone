@@ -1,6 +1,6 @@
 "use client";
 
-import { onUnblock } from "@/actions/block";
+import { onBlock, onUnblock } from "@/actions/block";
 import { Hint } from "@/components/hint";
 import { Button } from "@/components/ui/button";
 import { cn, stringToColor } from "@/lib/utils";
@@ -26,10 +26,10 @@ export const CommunityItem = ({
   const isHost = viewerName === hostName;
 
   const handleBlock = () => {
-    if (!participantName || !isSelf || !isHost) return;
+    if (!participantName || isSelf || !isHost) return;
 
     startTransition(() => {
-      onUnblock(participantIdentity)
+      onBlock(participantIdentity)
         .then(() => {
           toast.success(`Blocked ${participantName}`);
         })
