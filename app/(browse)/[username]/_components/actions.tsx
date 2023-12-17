@@ -4,7 +4,7 @@ import { onBlock, onUnblock } from "@/actions/block";
 import { onFollow, onUnfollow } from "@/actions/follow";
 import { Button } from "@/components/ui/button";
 import { User } from "@prisma/client";
-import React, { useEffect, useTransition } from "react";
+import React, { useTransition } from "react";
 import { toast } from "sonner";
 
 export const Actions = ({
@@ -23,7 +23,7 @@ export const Actions = ({
           toast.success("Followed");
         })
         .catch((err) => {
-          console.log(err);
+          console.error(err);
           toast.error("Something went wrong!");
         });
     });
@@ -35,7 +35,7 @@ export const Actions = ({
           toast.success("UnFollowed");
         })
         .catch((err) => {
-          console.log(err);
+          console.error(err);
           toast.error(err.message);
         });
     });
@@ -49,7 +49,7 @@ export const Actions = ({
           toast.success("Blocked");
         })
         .catch((err) => {
-          console.log(err);
+          console.error(err);
           toast.error("Something went wrong!");
         });
     });
