@@ -11,6 +11,7 @@ import { Chat, ChatSkeleton } from "./chat";
 import { Video, VideoSkeleton } from "./video";
 import { ChatToggle } from "./chat/toggle";
 import { Header, HeaderSkeleton } from "./header";
+import { Info } from "./info";
 
 interface IStreamPlayerProps {
   user: User & { stream: Stream | null };
@@ -48,6 +49,12 @@ export const StreamPlayer = ({ user, isFollowing }: IStreamPlayerProps) => {
             imageUrl={user.imageUrl}
             isFollowing={isFollowing}
             name={user.stream?.name || ""}
+          />
+          <Info
+            hostIdentity={user.id}
+            viewerIdentity={idenditity}
+            name={user.stream?.name || ""}
+            thumbnailUrl={user.stream?.thumbnailUrl || ""}
           />
         </div>
         <div className={cn("col-span-1", collapsed && "hidden")}>

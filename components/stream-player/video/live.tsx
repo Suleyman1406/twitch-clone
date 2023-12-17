@@ -1,11 +1,12 @@
 "use client";
 
-import { Participant, Track } from "livekit-client";
 import { ElementRef, useEffect, useRef, useState } from "react";
-import { useTracks } from "@livekit/components-react";
-import { FullscreenControl } from "./fullscreen-control";
+import { Participant, Track } from "livekit-client";
 import { useEventListener } from "usehooks-ts";
-import { VolumeControl } from "./volume-control";
+import { useTracks } from "@livekit/components-react";
+
+import { FullscreenControl } from "./control/fullscreen";
+import { VolumeControl } from "./control/volume";
 
 interface ILiveVideoProps {
   participant: Participant;
