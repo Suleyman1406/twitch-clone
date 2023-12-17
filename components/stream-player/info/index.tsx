@@ -3,6 +3,7 @@
 import { PencilIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
+import { InfoModal } from "./modal";
 
 interface IInfoProps {
   name: string;
@@ -39,7 +40,7 @@ export const Info = ({
               Maximize your visibility
             </p>
           </div>
-          {/* <InfoModal initialName={name} initialThumbnailUrl={thumbnailUrl} /> */}
+          <InfoModal initialName={name} initialThumbnailUrl={thumbnailUrl} />
         </div>
         <Separator />
         <div className="p-4 lg:p-6 space-y-4">
