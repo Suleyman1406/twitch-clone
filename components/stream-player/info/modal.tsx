@@ -58,7 +58,7 @@ export const InfoModal = ({
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Edit Stream Info</DialogTitle>
+          <DialogTitle>Edit stream info</DialogTitle>
         </DialogHeader>
         <form className="space-y-14" onSubmit={onSubmit}>
           <div className="space-y-2">
