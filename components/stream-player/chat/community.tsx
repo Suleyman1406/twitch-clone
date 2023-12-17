@@ -1,10 +1,11 @@
-import { Input } from "@/components/ui/input";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { LocalParticipant, RemoteParticipant } from "livekit-client";
 import { useParticipants } from "@livekit/components-react";
 import { useMemo, useState } from "react";
 import { useDebounce } from "usehooks-ts";
+
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Input } from "@/components/ui/input";
 import { CommunityItem } from "./community-item";
-import { LocalParticipant, RemoteParticipant } from "livekit-client";
 
 interface IChatCommunityProps {
   hostName: string;

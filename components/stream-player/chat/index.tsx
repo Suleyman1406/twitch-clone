@@ -3,7 +3,8 @@ import { useEffect, useMemo, useState } from "react";
 import { ConnectionState } from "livekit-client";
 import { useMediaQuery } from "usehooks-ts";
 
-import { ChatVariant, useChatSidebar } from "@/store/use-chat-sidebar";
+import { useChatSidebar } from "@/store/use-chat-sidebar";
+import { ChatVariant } from "@/constants";
 
 import {
   useChat,

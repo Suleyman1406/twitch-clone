@@ -1,8 +1,11 @@
 "use client";
-import { useSidebar } from "@/store/use-sidebar";
+
 import { Follow, User } from "@prisma/client";
-import { UserItem, UserItemSkeleton } from "./userItem";
+
+import { useSidebar } from "@/store/use-sidebar";
+
 import { Skeleton } from "@/components/ui/skeleton";
+import { UserItem, UserItemSkeleton } from "./userItem";
 
 interface IFollowingProps {
   data: (Follow & {

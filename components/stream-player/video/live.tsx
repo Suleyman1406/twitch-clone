@@ -3,8 +3,8 @@
 import { ElementRef, useEffect, useRef, useState } from "react";
 import { Participant, Track } from "livekit-client";
 import { useEventListener } from "usehooks-ts";
-import { useTracks } from "@livekit/components-react";
 
+import { useTracks } from "@livekit/components-react";
 import { FullscreenControl } from "./control/fullscreen";
 import { VolumeControl } from "./control/volume";
 

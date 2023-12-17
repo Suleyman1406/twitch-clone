@@ -1,6 +1,7 @@
-import { db } from "@/lib/db";
 import { WebhookReceiver } from "livekit-server-sdk";
 import { headers } from "next/headers";
+
+import { db } from "@/lib/db";
 
 const receiver = new WebhookReceiver(
   process.env.LIVEKIT_API_KEY!,

@@ -1,4 +1,5 @@
-import { Maximize, Minimize } from "lucide-react";
+import { MaximizeIcon, MinimizeIcon } from "lucide-react";
+
 import { Hint } from "@/components/hint";
 
 interface IFullscreenControlProps {
@@ -9,7 +10,7 @@ export const FullscreenControl = ({
   isFullscreen,
   onToggle,
 }: IFullscreenControlProps) => {
-  const Icon = isFullscreen ? Minimize : Maximize;
+  const Icon = isFullscreen ? MinimizeIcon : MaximizeIcon;
   const label = isFullscreen ? "Exit fullscreen" : "Enter fullscreen";
 
   return (

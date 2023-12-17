@@ -1,19 +1,24 @@
 "use server";
-import { db } from "@/lib/db";
-import { getSelf } from "@/lib/auth-service";
 
+import { TrackSource } from "livekit-server-sdk/dist/proto/livekit_models";
+import { revalidatePath } from "next/cache";
 import {
   IngressAudioEncodingPreset,
   IngressVideoEncodingPreset,
   IngressClient,
   IngressInput,
   type CreateIngressOptions,
+  RoomServiceClient,
 } from "livekit-server-sdk";
 
-import { TrackSource } from "livekit-server-sdk/dist/proto/livekit_models";
-import { revalidatePath } from "next/cache";
-import { roomService } from "@/constants";
+import { db } from "@/lib/db";
+import { getSelf } from "@/lib/auth-service";
 
+const roomService = new RoomServiceClient(
+  process.env.LIVEKIT_API_URL!,
+  process.env.LIVEKIT_API_KEY!,
+  process.env.LIVEKIT_API_SECRET!
+);
 const ingressClient = new IngressClient(process.env.LIVEKIT_API_URL!);
 
 export const resetIngresses = async (hostIdentity: string) => {

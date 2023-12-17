@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { useCreatorSidebar } from "@/store/use-creator-sidebar";
+import { cn } from "@/lib/utils";
 
 export const Wrapper = ({ children }: { children: React.ReactNode }) => {
   const { collapsed } = useCreatorSidebar();

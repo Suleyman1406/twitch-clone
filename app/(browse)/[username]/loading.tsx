@@ -1,6 +1,6 @@
 import { StreamPlayerSkeleton } from "@/components/stream-player";
 
-const CreatorLoading = () => {
+const ViewerLoading = () => {
   return (
     <div className="h-full">
       <StreamPlayerSkeleton />
@@ -8,4 +8,4 @@ const CreatorLoading = () => {
   );
 };
 
-export default CreatorLoading;
+export default ViewerLoading;

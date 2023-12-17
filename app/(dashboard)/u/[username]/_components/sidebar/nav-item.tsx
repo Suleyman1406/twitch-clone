@@ -1,10 +1,11 @@
-import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
-import { cn } from "@/lib/utils";
-import { useCreatorSidebar } from "@/store/use-creator-sidebar";
 import { LucideIcon } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+
+import { useCreatorSidebar } from "@/store/use-creator-sidebar";
+import { cn } from "@/lib/utils";
+
+import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
 
 interface INavItemProps {
   label: string;

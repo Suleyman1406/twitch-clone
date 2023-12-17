@@ -1,10 +1,11 @@
 "use server";
 
-import { getSelf } from "@/lib/auth-service";
-import { getIsBlockedByUser } from "@/lib/block-service";
-import { getUserById } from "@/lib/user-service";
 import { AccessToken } from "livekit-server-sdk";
 import { v4 } from "uuid";
+
+import { getIsBlockedByUser } from "@/lib/block-service";
+import { getUserById } from "@/lib/user-service";
+import { getSelf } from "@/lib/auth-service";
 
 export const createViewerToken = async (hostIdentity: string) => {
   let self;

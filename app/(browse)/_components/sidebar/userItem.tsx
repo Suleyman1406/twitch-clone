@@ -1,12 +1,15 @@
 "use client";
-import { LiveBadge } from "@/components/live-badge";
-import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
-import { UserAvatar } from "@/components/user-avatar";
+
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+
 import { cn } from "@/lib/utils";
 import { useSidebar } from "@/store/use-sidebar";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+
+import { UserAvatar } from "@/components/user-avatar";
+import { LiveBadge } from "@/components/live-badge";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
 
 interface IUserItemProps {
   username: string;

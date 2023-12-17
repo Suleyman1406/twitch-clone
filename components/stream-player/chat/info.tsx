@@ -1,6 +1,7 @@
-import { Hint } from "@/components/hint";
 import { InfoIcon } from "lucide-react";
 import React, { useMemo } from "react";
+
+import { Hint } from "@/components/hint";
 
 interface IChatInfoProps {
   isDelayed: boolean;

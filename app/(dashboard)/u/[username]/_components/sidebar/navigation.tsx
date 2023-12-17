@@ -1,13 +1,14 @@
 "use client";
 
 import { useUser } from "@clerk/nextjs";
+import { usePathname } from "next/navigation";
 import {
   FullscreenIcon,
   KeyRoundIcon,
   MessageSquareIcon,
   UsersIcon,
 } from "lucide-react";
-import { usePathname } from "next/navigation";
+
 import { NavItem, NavItemSkeleton } from "./nav-item";
 
 export const Navigation = () => {

@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useCallback, useState } from "react";
-import qs from "query-string";
 import { SearchIcon, XIcon } from "lucide-react";
+import { useCallback, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Input } from "@/components/ui/input";
+import qs from "query-string";
+
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export const Search = () => {
   const router = useRouter();

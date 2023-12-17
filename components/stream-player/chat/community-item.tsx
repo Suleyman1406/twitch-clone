@@ -1,12 +1,14 @@
 "use client";
 
-import { onBlock, onUnblock } from "@/actions/block";
-import { Hint } from "@/components/hint";
-import { Button } from "@/components/ui/button";
-import { cn, stringToColor } from "@/lib/utils";
-import { MinusCircle } from "lucide-react";
+import { MinusCircleIcon } from "lucide-react";
 import { useTransition } from "react";
 import { toast } from "sonner";
+
+import { cn, stringToColor } from "@/lib/utils";
+import { onBlock } from "@/actions/block";
+
+import { Button } from "@/components/ui/button";
+import { Hint } from "@/components/hint";
 
 interface ICommunityItemProps {
   hostName: string;
@@ -55,7 +57,7 @@ export const CommunityItem = ({
             onClick={handleBlock}
             className="h-auto w-auto p-1 opacity-0 group-hover:opacity-100 transition cursor-pointer"
           >
-            <MinusCircle className="h-4 w-4 text-muted-foreground" />
+            <MinusCircleIcon className="h-4 w-4 text-muted-foreground" />
           </Button>
         </Hint>
       )}

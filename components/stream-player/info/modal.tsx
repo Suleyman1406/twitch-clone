@@ -1,6 +1,6 @@
 "use client";
 import { ElementRef, useRef, useState, useTransition } from "react";
-import { useRouter } from "next/navigation";
+import { TrashIcon } from "lucide-react";
 import { toast } from "sonner";
 import Image from "next/image";
 
@@ -19,7 +19,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Hint } from "@/components/hint";
-import { TrashIcon } from "lucide-react";
 
 interface IInfoModalProps {
   initialName: string;

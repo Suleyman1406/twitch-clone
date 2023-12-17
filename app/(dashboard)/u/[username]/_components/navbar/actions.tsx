@@ -1,7 +1,8 @@
-import { Button } from "@/components/ui/button";
 import { UserButton } from "@clerk/nextjs";
-import { ClapperboardIcon, LogOut } from "lucide-react";
+import { LogOutIcon } from "lucide-react";
 import Link from "next/link";
+
+import { Button } from "@/components/ui/button";
 
 export const Actions = async () => {
   return (
@@ -13,7 +14,7 @@ export const Actions = async () => {
         asChild
       >
         <Link href="/">
-          <LogOut className="h-5 w-5 mr-2" />
+          <LogOutIcon className="h-5 w-5 mr-2" />
           Exit
         </Link>
       </Button>

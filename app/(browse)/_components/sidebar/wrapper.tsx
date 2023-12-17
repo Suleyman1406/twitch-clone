@@ -1,11 +1,13 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { useSidebar } from "@/store/use-sidebar";
-import { ToggleSkeleton } from "./toggle";
-import { RecommendedSkeleton } from "./recommended";
 import { useIsClient } from "usehooks-ts";
+
+import { useSidebar } from "@/store/use-sidebar";
+import { cn } from "@/lib/utils";
+
+import { RecommendedSkeleton } from "./recommended";
 import { FollowingSkeleton } from "./following";
+import { ToggleSkeleton } from "./toggle";
 
 interface IWrapperProps {
   children: React.ReactNode;

@@ -1,11 +1,12 @@
-import React from "react";
-import { UrlCard } from "./_components/url-card";
-import { getSelf } from "@/lib/auth-service";
-import { getStreamByUserId } from "@/lib/stream-service";
 import { redirect } from "next/navigation";
 import { toast } from "sonner";
-import { KeyCard } from "./_components/key-card";
+
+import { getSelf } from "@/lib/auth-service";
+import { getStreamByUserId } from "@/lib/stream-service";
+
 import { ConnectModal } from "./_components/connect-modal";
+import { KeyCard } from "./_components/key-card";
+import { UrlCard } from "./_components/url-card";
 
 const KeysPage = async () => {
   const self = await getSelf();

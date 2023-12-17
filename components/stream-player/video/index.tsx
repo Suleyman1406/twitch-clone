@@ -1,10 +1,10 @@
 import { ConnectionState, Track } from "livekit-client";
+
 import {
   useConnectionState,
   useRemoteParticipant,
   useTracks,
 } from "@livekit/components-react";
-
 import { Skeleton } from "@/components/ui/skeleton";
 import { OfflineVideo } from "./offline";
 import { LoadingVideo } from "./loading";

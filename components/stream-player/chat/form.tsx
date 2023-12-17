@@ -1,10 +1,12 @@
 "use client";
 
+import { useState } from "react";
+
+import { cn } from "@/lib/utils";
+
+import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Skeleton } from "@/components/ui/skeleton";
-import { cn } from "@/lib/utils";
-import { useState } from "react";
 import { ChatInfo } from "./info";
 
 interface IChatFormProps {

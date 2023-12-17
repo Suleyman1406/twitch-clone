@@ -1,9 +1,10 @@
 "use client";
 
+import { useState } from "react";
+
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CopyButton } from "./copy-button";
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
 
 interface IKeyCardProps {
   value: string | null;

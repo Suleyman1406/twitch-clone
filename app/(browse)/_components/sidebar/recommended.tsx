@@ -1,8 +1,11 @@
 "use client";
-import { useSidebar } from "@/store/use-sidebar";
+
 import { User } from "@prisma/client";
-import { UserItem, UserItemSkeleton } from "./userItem";
+
+import { useSidebar } from "@/store/use-sidebar";
+
 import { Skeleton } from "@/components/ui/skeleton";
+import { UserItem, UserItemSkeleton } from "./userItem";
 
 interface IRecommendedProps {
   data: (User & { stream: { isLive: boolean } | null })[];

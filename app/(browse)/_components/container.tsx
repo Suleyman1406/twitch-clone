@@ -1,8 +1,10 @@
 "use client";
-import { cn } from "@/lib/utils";
-import { useSidebar } from "@/store/use-sidebar";
-import React, { useEffect } from "react";
+
+import { useEffect } from "react";
 import { useMediaQuery } from "usehooks-ts";
+
+import { useSidebar } from "@/store/use-sidebar";
+import { cn } from "@/lib/utils";
 
 interface IContainerProps {
   children: React.ReactNode;

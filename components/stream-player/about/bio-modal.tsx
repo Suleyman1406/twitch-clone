@@ -1,5 +1,12 @@
 "use client";
 
+import { ElementRef, useRef, useState, useTransition } from "react";
+import { toast } from "sonner";
+
+import { onUserUpdate } from "@/actions/user";
+
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -8,11 +15,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { ElementRef, useRef, useState, useTransition } from "react";
-import { onUserUpdate } from "@/actions/user";
-import { toast } from "sonner";
 
 interface IBioModalProps {
   initialValue: string | null;
