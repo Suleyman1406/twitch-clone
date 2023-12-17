@@ -21,6 +21,10 @@ const UserPage = async ({ params: { username } }: IUserPageProps) => {
   const isFollowing = await getIsFollowingUser(user.id);
   const isBlockedByUser = await getIsBlockedByUser(user.id);
 
+  if (isBlockedByUser) {
+    return notFound();
+  }
+
   return (
     <div className="h-full">
       <StreamPlayer user={user} isFollowing={isFollowing} />
