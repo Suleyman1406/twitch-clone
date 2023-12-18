@@ -1,7 +1,5 @@
 "use client";
 
-import { Stream, User } from "@prisma/client";
-
 import { useChatSidebar } from "@/store/use-chat-sidebar";
 import { useViewerToken } from "@/hooks/use-viewer-token";
 import { cn } from "@/lib/utils";
@@ -15,9 +13,27 @@ import { About, AboutSkeleton } from "./about";
 import { Info } from "./info";
 
 interface IStreamPlayerProps {
-  user: User & { stream: Stream | null; _count: { followedBy: number } };
+  user: {
+    id: string;
+    username: string;
+    bio: string | null;
+    imageUrl: string;
+    stream: {
+      id: string;
+      name: string;
+      isLive: boolean;
+      isChatEnabled: boolean;
+      isChatDelayed: boolean;
+      isChatFollowerOnly: boolean;
+      thumbnailUrl: string | null;
+    } | null;
+    _count: {
+      followedBy: number;
+    };
+  };
   isFollowing: boolean;
 }
+
 export const StreamPlayer = ({ user, isFollowing }: IStreamPlayerProps) => {
   const { token, name, idenditity } = useViewerToken(user.id);
   const { collapsed } = useChatSidebar();
