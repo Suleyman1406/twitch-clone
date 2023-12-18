@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { Webhook } from "svix";
 
 import { db } from "@/lib/db";
+import { resetIngresses } from "@/actions/ingress";
 
 export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
@@ -78,6 +79,7 @@ export async function POST(req: Request) {
         });
         break;
       case "user.deleted":
+        await resetIngresses(payload.data.id);
         await db.user.delete({
           where: { externalUserId: payload.data.id },
         });
