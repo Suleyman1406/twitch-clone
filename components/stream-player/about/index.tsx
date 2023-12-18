@@ -1,6 +1,7 @@
 "use client";
 
 import { VerifiedMark } from "@/components/verified-mark";
+import { Skeleton } from "@/components/ui/skeleton";
 import { BioModal } from "./bio-modal";
 
 interface IAboutProps {
@@ -39,6 +40,19 @@ export const About = ({
         <p className="text-sm">
           {bio || "This user prefers to keep an air of mystery about them."}
         </p>
+      </div>
+    </div>
+  );
+};
+
+export const AboutSkeleton = () => {
+  return (
+    <div className="px-4 w-full mb-20">
+      <div className="gorup rounded-xl bg-background p-6 lg:p-10 flex flex-col gap-y-3">
+        <Skeleton className="w-[230px] h-7" />
+        <Skeleton className="w-[100px] h-5" />
+        <Skeleton className="w-full h-5" />
+        <Skeleton className="w-full h-5" />
       </div>
     </div>
   );

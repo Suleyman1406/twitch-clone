@@ -11,7 +11,7 @@ import { Header, HeaderSkeleton } from "./header";
 import { Video, VideoSkeleton } from "./video";
 import { Chat, ChatSkeleton } from "./chat";
 import { ChatToggle } from "./chat/toggle";
-import { About } from "./about";
+import { About, AboutSkeleton } from "./about";
 import { Info } from "./info";
 
 interface IStreamPlayerProps {
@@ -84,10 +84,11 @@ export const StreamPlayer = ({ user, isFollowing }: IStreamPlayerProps) => {
 
 export const StreamPlayerSkeleton = () => {
   return (
-    <div className="grid grid-cols-1 lg:gap-y-0 lg:grid-cols-3 2xl:grid-cols-6 h-full">
-      <div className="space-y-4 col-span-1 lg:col-span-2 2xl:col-span-5 lg:overflow-y-auto hidden-scrollbar">
+    <div className="grid grid-cols-1 lg:gap-y-0 lg:grid-cols-3 2xl:grid-cols-6 h-full gap-y-2">
+      <div className="space-y-4 col-span-1 lg:col-span-2 2xl:col-span-5 lg:overflow-y-auto hidden-scrollbar pb-8">
         <VideoSkeleton />
         <HeaderSkeleton />
+        <AboutSkeleton />
       </div>
       <div className="col-span-1 bg-background">
         <ChatSkeleton />
