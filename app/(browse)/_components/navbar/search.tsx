@@ -1,8 +1,8 @@
 "use client";
 
+import { useRouter, useSearchParams } from "next/navigation";
 import { SearchIcon, XIcon } from "lucide-react";
 import { useCallback, useState } from "react";
-import { useRouter } from "next/navigation";
 import qs from "query-string";
 
 import { Button } from "@/components/ui/button";
@@ -10,12 +10,13 @@ import { Input } from "@/components/ui/input";
 
 export const Search = () => {
   const router = useRouter();
-  const [value, setValue] = useState("");
+  const searchParams = useSearchParams();
+  const [value, setValue] = useState(searchParams.get("term") || "");
 
   const onSubmit = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      if (!value) return;
+      if (!value) return router.push("/");
 
       const url = qs.stringifyUrl(
         {
@@ -32,6 +33,7 @@ export const Search = () => {
 
   const onClear = () => {
     setValue("");
+    router.push("/");
   };
 
   return (
