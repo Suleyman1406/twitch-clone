@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { UserAvatar, UserAvatarSkeleton } from "@/components/user-avatar";
 import { Thumbnail, ThumbnailSkeleton } from "@/components/thumbnail";
-import { LiveBadge } from "@/components/live-badge";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface IResultCardProps {
@@ -18,18 +17,13 @@ interface IResultCardProps {
 export const ResultCard = ({ data }: IResultCardProps) => {
   return (
     <Link href={`/${data.user.username}`}>
-      <div className="group h-full w-full space-y-4 relative">
+      <div className="h-full w-full space-y-4">
         <Thumbnail
           isLive={data.isLive}
           src={data.thumbnailUrl}
           fallback={data.user.imageUrl}
           username={data.user.username}
         />
-        {data.isLive && (
-          <div className="absolute -top-2 left-2 group-hover:translate-x-2 group-hover:-translate-y-1 transition-transform">
-            <LiveBadge />
-          </div>
-        )}
         <div className="flex gap-x-3 items-center">
           <UserAvatar
             isLive={data.isLive}
