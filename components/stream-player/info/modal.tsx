@@ -44,7 +44,7 @@ export const InfoModal = ({
           toast.success("Stream updated.");
           closeButtonRef.current?.click();
         })
-        .catch((err) => toast.error(err.message || "Something went wrong!"));
+        .catch(() => toast.error("Something went wrong!"));
     });
   };
 

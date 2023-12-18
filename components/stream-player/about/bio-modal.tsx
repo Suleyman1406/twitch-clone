@@ -33,7 +33,7 @@ export const BioModal = ({ initialValue }: IBioModalProps) => {
           toast.success(`Your bio updated`);
           closeButtonRef.current?.click();
         })
-        .catch((err) => toast.error(err.message || "Something went wrong!"));
+        .catch(() => toast.error("Something went wrong!"));
     });
   };
   return (

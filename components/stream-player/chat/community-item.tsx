@@ -36,7 +36,7 @@ export const CommunityItem = ({
           toast.success(`Blocked ${participantName}`);
         })
         .catch((e) => {
-          toast.error(e.message || "Something went wrong!");
+          toast.error("Something went wrong!");
         });
     });
   };

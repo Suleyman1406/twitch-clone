@@ -25,8 +25,8 @@ export const ToggleCard = ({ field, label, value }: IToggleCardProps) => {
         .then(() => {
           toast.success("Chat settings updated!");
         })
-        .catch((err) => {
-          toast.error(err.message ?? "Something went wrong!");
+        .catch(() => {
+          toast.error("Something went wrong!");
         });
     });
   };
