@@ -39,7 +39,7 @@ export const Recommended = ({ data }: IRecommendedProps) => {
 
 export const RecommendedSkeleton = () => {
   return (
-    <ul className="px-2 pt-4 lg:pt-0">
+    <ul className="px-2 pt-4 lg:pt-0 mt-4">
       <div className="px-3 pb-3 hidden lg:block">
         <Skeleton className="h-5 w-full" />
       </div>
